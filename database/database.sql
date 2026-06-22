@@ -23,8 +23,8 @@ CREATE TABLE borrow_records (
 
 -- Sample books
 INSERT INTO books (title, author) VALUES
-("Docker Book", "Mustafa"),
-("Kubernetes", "Mustafa Shaik"),
+("Docker Book", ""),
+("Kubernetes", "mani Shaik"),
 ("Terraform", "Musta");
 
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root';
