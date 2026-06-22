@@ -9,7 +9,7 @@ services:
   auth_service:
     image: manikanta6565/py:auth_image
     ports:
-      - "6001:6001"
+      - "1432:1432"
     networks:
       - mynetwork
     depends_on:
@@ -18,7 +18,7 @@ services:
   book_service:
     image: manikanta6565/py:book_image
     ports:
-      - "6002:6002"
+      - "1433:1433"
     networks:
       - mynetwork
     depends_on:
@@ -27,7 +27,7 @@ services:
   borrow_service:
     image: manikanta6565/py:borrow_image
     ports:
-      - "6003:6003"
+      - "1434:1434"
     networks:
       - mynetwork
     depends_on:
