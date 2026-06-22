@@ -36,7 +36,7 @@ services:
   frontend:
     image: manikanta6565/py:frontend
     ports:
-      - "1310:1310"
+      - "5000:5000"
     networks:
       - mynetwork
     depends_on:
