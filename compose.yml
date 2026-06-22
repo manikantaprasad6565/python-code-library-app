@@ -18,7 +18,7 @@ services:
   book:
     image: manikanta6565/py:book_image
     ports:
-      - "5002:5002"
+      - "5004:5004"
     networks:
       - mynetwork
     depends_on:
