@@ -1,55 +1,49 @@
----
 services:
   db:
     image: manikanta6565/py:db_image
-    deploy:
-      replicas: 1
     ports:
-      - "3306:3306" 
+      - "3306:3306"
     networks:
-      - mynetwork 
+      - mynetwork
+
   auth:
     image: manikanta6565/py:auth_image
-    deploy:
-      replicas: 1
     ports:
       - "5001:5001"
     networks:
-      - mynetwork   
-      depends_on:
-        - db
+      - mynetwork
+    depends_on:
+      - db
+
   book:
     image: manikanta6565/py:book_image
-    deploy:
-      replicas: 1
     ports:
       - "5002:5002"
     networks:
-      - mynetwork   
-      depends_on:
-        - db
+      - mynetwork
+    depends_on:
+      - db
+
   borrow:
     image: manikanta6565/py:borrow_image
-    deploy:
-      replicas: 1
     ports:
       - "5003:5003"
     networks:
-      - mynetwork 
-      depends_on:
-        - db 
+      - mynetwork
+    depends_on:
+      - db
+
   frontend:
     image: manikanta6565/py:frontend
-    deploy:
-      replicas: 1
     ports:
       - "5000:5000"
     networks:
-      - mynetwork   
-      depends_on:
-        - auth
-        -book
-        -borrow       
+      - mynetwork
+    depends_on:
+      - auth
+      - book
+      - borrow
+
 networks:
-  mynetworks:
+  mynetwork:
     driver: overlay
